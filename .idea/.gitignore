@@ -1,12 +1,20 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+<<<<<<< HEAD
+=======
+# Editor-based HTTP Client requests
+/httpRequests/
+>>>>>>> 1102f531a0f93749cfa1fec037f9509962e173e9
 # Ignored default folder with query files
 /queries/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+<<<<<<< HEAD
 # Editor-based HTTP Client requests
 /httpRequests/
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/
+=======
+>>>>>>> 1102f531a0f93749cfa1fec037f9509962e173e9
