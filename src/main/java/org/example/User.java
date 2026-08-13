@@ -1,33 +1,42 @@
 package org.example;
 
+import java.util.Objects;
+
+
+/**
+ * Класс User представляет пользователя системы.
+ * Реализует паттерн Builder через внутренний класс UserBuilder.
+ */
 public class User {
 
     private final String name;
     private final String password;
     private final String email;
 
-    private User(Builder builder) {
+    private User(UserBuilder builder) {
         this.name = builder.name;
         this.password = builder.password;
         this.email = builder.email;
     }
 
-    public static class Builder {
+    // Билдер
+    public static class UserBuilder {
+
         private String name;
         private String password;
         private String email;
 
-        public Builder name(String name) {
+        public UserBuilder name(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder password(String password) {
+        public UserBuilder password(String password) {
             this.password = password;
             return this;
         }
 
-        public Builder email(String email) {
+        public UserBuilder email(String email) {
             this.email = email;
             return this;
         }
@@ -58,6 +67,24 @@ public class User {
     public String getPassword() { return password; }
     public String getEmail() { return email; }
 
+    // Сравнение
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+
+        return Objects.equals(name, user.name) &&
+               Objects.equals(password, user.password) &&
+               Objects.equals(email, user.email);
+
+    }
+    // Хэш
+    @Override
+    public int hashCode() { return Objects.hash(name, password, email); }
+
+    // В строку
     @Override
     public String toString() {
         return String.format("User{name='%s', email='%s', password='***'}", name, email);

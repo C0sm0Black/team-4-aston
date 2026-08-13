@@ -227,13 +227,16 @@ public class Application {
      * Обработка выбора стратегии сортировки
      */
     private void handleSelectStrategy() {
+
         System.out.println("\n🎯 ВЫБОР СТРАТЕГИИ СОРТИРОВКИ");
         System.out.println("-".repeat(40));
 
         if (!isDataLoaded) {
+
             System.out.println("⚠️ Сначала загрузите данные пользователей!");
             waitForEnter();
             return;
+
         }
 
         menu.showSortStrategyMenu();
@@ -243,27 +246,36 @@ public class Application {
         String strategyName = "";
 
         switch (choice) {
+
             case 1:
+
                 strategy = new SortByNameStrategy();
                 strategyName = "по имени (алфавит)";
                 break;
+
             case 2:
+
                 strategy = new SortByPasswordStrategy();
                 strategyName = "по паролю (длина + лексикографически)";
                 break;
+
             case 3:
+
                 strategy = new SortByEmailStrategy();
                 strategyName = "по почте (алфавит)";
                 break;
+
             default:
                 System.out.println("❌ Неверный выбор стратегии");
                 waitForEnter();
                 return;
+
         }
 
         sortContext.setStrategy(strategy);
         System.out.println("✅ Выбрана стратегия сортировки: " + strategyName);
         waitForEnter();
+
     }
 
     /**
@@ -275,15 +287,19 @@ public class Application {
         System.out.println("-".repeat(40));
 
         if (!isDataLoaded) {
+
             System.out.println("⚠️ Сначала загрузите данные пользователей!");
             waitForEnter();
             return;
+
         }
 
         if (users.isEmpty()) {
+
             System.out.println("⚠️ Список пользователей пуст!");
             waitForEnter();
             return;
+
         }
 
         try {
@@ -398,6 +414,7 @@ public class Application {
                 String filename = scanner.nextLine().trim();
 
                 try {
+
                     FileHandler.saveToFile(users, filename); // Реализовать класс и данный метод для сохранения в файл
                     System.out.println("✅ Данные сохранены");
 
