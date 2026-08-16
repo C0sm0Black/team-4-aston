@@ -1,4 +1,6 @@
-package org.example;
+package org.example.menu;
+
+import org.example.User;
 
 import java.util.List;
 

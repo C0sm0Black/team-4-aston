@@ -1,10 +1,11 @@
-package org.example;
+package org.example.menu;
+
+import org.example.User;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.nio.file.Files;
 
 public class FileHandler {
     public static String toCSVLine(User user){

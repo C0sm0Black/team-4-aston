@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.menu.FileHandler;
+import org.example.menu.Menu;
+import org.example.menu.UserTablePrinter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,7 +18,8 @@ public class Application {
     private static final int EXECUTE_SORT = 5;
     private static final int SHOW_USERS = 6;
     private static final int SAVE_TO_FILE = 7;
-    private static final int EXIT = 8;
+    private static final int COUNT_OCCURRENCES = 8;
+    private static final int EXIT = 9;
 
     // Состояние приложения
     // Реализовать классы Menu, DataInputHandler, SortContext !!!
@@ -102,53 +107,16 @@ public class Application {
     private void handleMenuChoice(int choice) {
 
         switch (choice) {
-
-            case MANUAL_INPUT:
-
-                handleManualInput();
-                break;
-
-            case RANDOM_INPUT:
-
-                handleRandomInput();
-                break;
-
-            case FILE_INPUT:
-
-                handleFileInput();
-                break;
-
-            case SELECT_STRATEGY:
-
-                handleSelectStrategy();
-                break;
-
-            case EXECUTE_SORT:
-
-                handleExecuteSort();
-                break;
-
-            case SHOW_USERS:
-
-                handleShowUsers();
-                break;
-
-            case SAVE_TO_FILE:
-
-                handleSaveToFile();
-                break;
-
-            case EXIT:
-
-                handleExit();
-                break;
-
-            default:
-
-                System.out.println("❌ Неизвестная команда");
-
+            case MANUAL_INPUT -> handleManualInput();
+            case RANDOM_INPUT -> handleRandomInput();
+            case FILE_INPUT -> handleFileInput();
+            case SELECT_STRATEGY -> handleSelectStrategy();
+            case EXECUTE_SORT -> handleExecuteSort();
+            case SHOW_USERS -> handleShowUsers();
+            case SAVE_TO_FILE -> handleSaveToFile();
+            case COUNT_OCCURRENCES -> handleCountOccurrences();
+            case EXIT -> handleExit();
         }
-
     }
 
     /**
@@ -377,6 +345,181 @@ public class Application {
         }
 
         waitForEnter();
+
+    }
+
+    /**
+     * Подсчитывает количество вхождений элемента в коллекцию.
+     * Пользователь выбирает поле для поиска.
+     * Использует многопоточность через Thread.
+     */
+    private void handleCountOccurrences() {
+
+        System.out.println("\n🔍 ПОДСЧЕТ ВХОЖДЕНИЙ");
+        System.out.println("-".repeat(40));
+
+        if (!isDataLoaded || users.isEmpty()) {
+
+            System.out.println("⚠️ Нет данных для поиска!");
+            waitForEnter();
+            return;
+
+        }
+
+        // Выбор поля для поиска
+        System.out.println("\nВыберите поле для поиска:");
+        System.out.println("1. По имени");
+        System.out.println("2. По паролю");
+        System.out.println("3. По email");
+        System.out.print("Выберите поле: ");
+
+        int fieldChoice;
+
+        try {
+
+            fieldChoice = Integer.parseInt(scanner.nextLine().trim());
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("❌ Неверный выбор");
+            waitForEnter();
+            return;
+
+        }
+
+        if (fieldChoice < 1 || fieldChoice > 3) {
+
+            System.out.println("❌ Неверный выбор поля");
+            waitForEnter();
+            return;
+
+        }
+
+        System.out.print("Введите значение для поиска: ");
+        String searchValue = scanner.nextLine().trim();
+
+        // Многопоточный подсчет вхождений
+        long count = countOccurrencesMultithreaded(users, fieldChoice, searchValue);
+
+        String fieldName = switch (fieldChoice) {
+
+            case 1 -> "имени";
+            case 2 -> "паролю";
+            case 3 -> "email";
+            default -> throw new IllegalStateException("Unexpected value: " + fieldChoice);
+
+        };
+
+        System.out.println("✅ Найдено пользователей по " + fieldName + " '" + searchValue + "': " + count);
+
+        waitForEnter();
+
+    }
+
+    /**
+     * Многопоточный метод подсчета вхождений элемента в коллекцию.
+     * Разделяет коллекцию на части и обрабатывает каждую в отдельном потоке.
+     *
+     * @param users       - коллекция пользователей
+     * @param fieldChoice - поле для поиска (1 - имя, 2 - пароль, 3 - email)
+     * @param searchValue - значение для поиска
+     * @return long - количество вхождений
+     */
+    private long countOccurrencesMultithreaded(List<User> users, int fieldChoice, String searchValue) {
+
+        int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), 4);
+        int size = users.size();
+
+        // Массив для хранения результатов каждого потока
+        long[] results = new long[threadCount];
+        Thread[] threads = new Thread[threadCount];
+
+        int chunkSize = (int) Math.ceil((double) size / threadCount);
+
+        // Создаем и запускаем потоки
+        for (int i = 0; i < threadCount; i++) {
+
+            final int threadIndex = i;
+            final int start = i * chunkSize;
+            final int end = Math.min((i + 1) * chunkSize, size);
+
+            if (start < end) {
+
+                threads[i] = new Thread(() ->
+                        results[threadIndex] = countInRange(users, start, end, fieldChoice, searchValue),
+                        "CounterThread-" + (i + 1));
+
+                threads[i].start();
+
+            }
+
+        }
+
+        // Ожидаем завершения всех потоков
+        for (Thread thread : threads) {
+
+            if (thread != null) {
+
+                try {
+
+                    thread.join();
+
+                } catch (InterruptedException e) {
+
+                    System.err.println("❌ Поток прерван: " + e.getMessage());
+                    Thread.currentThread().interrupt();
+
+                }
+
+            }
+
+        }
+
+        // Суммируем результаты
+        long totalCount = 0;
+
+        for (long result : results) {
+            totalCount += result;
+        }
+
+        return totalCount;
+
+    }
+
+    /**
+     * Подсчитывает вхождения в заданном диапазоне коллекции.
+     *
+     * @param users       - коллекция пользователей
+     * @param start       - начальный индекс
+     * @param end         - конечный индекс (исключительно)
+     * @param fieldChoice - поле для поиска
+     * @param searchValue - значение для поиска
+     * @return long - количество вхождений в диапазоне
+     */
+    private long countInRange(List<User> users, int start, int end, int fieldChoice, String searchValue) {
+
+        long count = 0;
+
+        for (int i = start; i < end; i++) {
+
+            User user = users.get(i);
+
+            String fieldValue = switch (fieldChoice) {
+
+                case 1 -> user.getName();
+                case 2 -> user.getPassword();
+                case 3 -> user.getEmail();
+                default -> throw new IllegalStateException("Unexpected value: " + fieldChoice);
+
+            };
+
+            if (fieldValue.equals(searchValue)) {
+                count++;
+            }
+
+        }
+
+        return count;
 
     }
 
