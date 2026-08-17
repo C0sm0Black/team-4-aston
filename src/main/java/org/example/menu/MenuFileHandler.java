@@ -1,21 +1,25 @@
 package org.example.menu;
 
-import org.example.User;
+import org.example.collection.CustomLinkedList;
+import org.example.entity.User;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
-public class FileHandler {
+public class MenuFileHandler {
+
     public static String toCSVLine(User user){
+
         return  String.join(";",
                 user.getName(),
                 user.getPassword(),
                 user.getEmail());
+
     }
 
-    public static void saveToFile(List<User> users, String filename) throws IOException {
+    public static void saveToFile(CustomLinkedList<User> users, String filename) throws IOException {
+
         if (filename == null){
             throw new IllegalArgumentException("Имя файла не может быть пустым!");
         }
@@ -42,5 +46,7 @@ public class FileHandler {
         }
 
         pw.close();
+
     }
+
 }

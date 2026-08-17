@@ -1,4 +1,4 @@
-package org.example;
+package org.example.entity;
 
 import java.util.Objects;
 
@@ -13,30 +13,30 @@ public class User {
     private final String password;
     private final String email;
 
-    private User(UserBuilder builder) {
+    private User(Builder builder) {
         this.name = builder.name;
         this.password = builder.password;
         this.email = builder.email;
     }
 
     // Билдер
-    public static class UserBuilder {
+    public static class Builder {
 
         private String name;
         private String password;
         private String email;
 
-        public UserBuilder name(String name) {
+        public Builder name(String name) {
             this.name = name;
             return this;
         }
 
-        public UserBuilder password(String password) {
+        public Builder password(String password) {
             this.password = password;
             return this;
         }
 
-        public UserBuilder email(String email) {
+        public Builder email(String email) {
             this.email = email;
             return this;
         }
@@ -80,6 +80,7 @@ public class User {
                Objects.equals(email, user.email);
 
     }
+
     // Хэш
     @Override
     public int hashCode() { return Objects.hash(name, password, email); }

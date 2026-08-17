@@ -1,11 +1,11 @@
 package org.example.menu;
 
-import org.example.User;
-
-import java.util.List;
+import org.example.collection.CustomLinkedList;
+import org.example.entity.User;
 
 public class UserTablePrinter {
-    private static int calculateNameWidth(List<User> users){
+
+    private static int calculateNameWidth(CustomLinkedList<User> users) {
         return users.stream()
                 .map(User::getName)
                 .mapToInt(String::length)
@@ -13,7 +13,7 @@ public class UserTablePrinter {
                 .orElse(0);
     }
 
-    private static int calculateEmailWidth(List<User> users){
+    private static int calculateEmailWidth(CustomLinkedList<User> users) {
         return users.stream()
                 .map(User::getEmail)
                 .mapToInt(String::length)
@@ -21,24 +21,25 @@ public class UserTablePrinter {
                 .orElse(0);
     }
 
-    private static void printSeparator(
-            int nameWidth,
-            int emailWidth
-    ) {
+    private static void printSeparator(int nameWidth, int emailWidth) {
+
         System.out.printf(
                 "+-----+-%s-+--------+-%s-+%n",
                 "-".repeat(nameWidth),
                 "-".repeat(emailWidth)
         );
+
     }
 
-    public static void printUsers(List<User> users){
+    public static void printUsers(CustomLinkedList<User> users) {
+
         int nameWidth = Math.max("Имя".length(), calculateNameWidth(users));
         int emailWidth = Math.max("Почта".length(), calculateEmailWidth(users));
         int index = 1;
         int passwordWidth = 8;
 
         for (User user : users) {
+
             printSeparator(nameWidth, emailWidth);
 
             System.out.printf(
@@ -50,8 +51,11 @@ public class UserTablePrinter {
             );
 
             index++;
+
         }
 
         printSeparator(nameWidth, emailWidth);
+
     }
+
 }

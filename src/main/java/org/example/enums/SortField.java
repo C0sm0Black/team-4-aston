@@ -1,8 +1,11 @@
-package org.example;
+package org.example.enums;
+
+import org.example.entity.User;
 
 import java.util.Comparator;
 
 public enum SortField {
+
     NAME(Comparator.comparing(User::getName)),
     PASSWORD(Comparator.comparingInt((User u) -> u.getPassword().length())
             .thenComparing(User::getPassword)),
