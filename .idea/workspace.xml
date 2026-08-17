@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8170a23c-0bb0-419c-891a-eb57e284ccc5" name="Changes" comment="Объединил ветки для теста приложения, все в ветку core-model, тесты убрал пока что.">
+      <change beforePath="$PROJECT_DIR$/src/test/Developer3Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ApplicationIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/SortStrategiesTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/data-input" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/C0sm0Black/team-4-aston.git&quot;,
+    &quot;accountId&quot;: &quot;0ebf9cc9-5b7f-4143-99a2-79206d982db7&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Hg59WMmix3GoFGgFcZ7qOKvrXo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "Application.SortStrategiesTest.executor": "Run",
+    "JUnit.ApplicationIntegrationTest.executor": "Run",
+    "Maven.team-4-aston [clean].executor": "Run",
+    "Maven.team-4-aston [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "core-model",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/soulk/IdeaProjects/team-4-aston/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\soulk\IdeaProjects\team-4-aston\src\main" />
+      <recent name="C:\Users\soulk\IdeaProjects\team-4-aston\src\main\java\org.example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Application" />
+      <module name="team-4-aston" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortStrategiesTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.SortStrategiesTest" />
+      <module name="team-4-aston" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="team-4-aston" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.SortStrategiesTest" />
+        <item itemvalue="JUnit.ApplicationIntegrationTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8170a23c-0bb0-419c-891a-eb57e284ccc5" name="Changes" comment="" />
+      <created>1786276721811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786276721811</updated>
+      <workItem from="1786276722841" duration="2953000" />
+      <workItem from="1786614422097" duration="2601000" />
+      <workItem from="1786964870391" duration="1037000" />
+      <workItem from="1786966002419" duration="1311000" />
+      <workItem from="1786967334252" duration="727000" />
+      <workItem from="1786968071227" duration="47000" />
+      <workItem from="1786968134182" duration="65000" />
+      <workItem from="1786968213214" duration="1192000" />
+      <workItem from="1786969413633" duration="4000" />
+      <workItem from="1786969537137" duration="607000" />
+      <workItem from="1786970635245" duration="421000" />
+      <workItem from="1786971217552" duration="9075000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1786278024756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1786278024756</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1. Change Builder to UserBuilder&#10;2. Add User equals + hashCode">
+      <option name="closed" value="true" />
+      <created>1786616871807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1786616871807</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/sort-strategies' into core-model">
+      <option name="closed" value="true" />
+      <created>1786967673731</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1786967673731</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Объединил ветки для теста приложения, все в ветку core-model, тесты убрал пока что.">
+      <option name="closed" value="true" />
+      <created>1786995170647</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1786995170647</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="1. Change Builder to UserBuilder&#10;2. Add User equals + hashCode" />
+    <MESSAGE value="3. Merge 3 branch" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/sort-strategies' into core-model&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/org/example/Application.java" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/sort-strategies' into core-model" />
+    <MESSAGE value="Объединил ветки для теста приложения, все в ветку core-model" />
+    <MESSAGE value="Объединил ветки для теста приложения, все в ветку core-model, тесты убрал пока что." />
+    <option name="LAST_COMMIT_MESSAGE" value="Объединил ветки для теста приложения, все в ветку core-model, тесты убрал пока что." />
+  </component>
+</project>
