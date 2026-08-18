@@ -50,15 +50,13 @@ class UserTest {
         @DisplayName("Should throw exception when name is null")
         void shouldThrowExceptionWhenNameIsNull() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name(null)
-                        .password("password123")
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name(null)
+                    .password("password123")
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -66,15 +64,13 @@ class UserTest {
         @DisplayName("Should throw exception when name is empty")
         void shouldThrowExceptionWhenNameIsEmpty() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("")
-                        .password("password123")
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("")
+                    .password("password123")
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -82,15 +78,13 @@ class UserTest {
         @DisplayName("Should throw exception when name contains only spaces")
         void shouldThrowExceptionWhenNameIsOnlySpaces() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("   ")
-                        .password("password123")
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("   ")
+                    .password("password123")
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -98,15 +92,13 @@ class UserTest {
         @DisplayName("Should throw exception when password is null")
         void shouldThrowExceptionWhenPasswordIsNull() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password(null)
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password(null)
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -114,15 +106,13 @@ class UserTest {
         @DisplayName("Should throw exception when password is too short (less than 6)")
         void shouldThrowExceptionWhenPasswordIsTooShort() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password("12345")
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password("12345")
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -130,15 +120,13 @@ class UserTest {
         @DisplayName("Should throw exception when password is empty")
         void shouldThrowExceptionWhenPasswordIsEmpty() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password("")
-                        .email("alice@mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password("")
+                    .email("alice@mail.com")
+                    .build());
 
         }
 
@@ -146,15 +134,13 @@ class UserTest {
         @DisplayName("Should throw exception when email is null")
         void shouldThrowExceptionWhenEmailIsNull() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password("password123")
-                        .email(null)
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password("password123")
+                    .email(null)
+                    .build());
 
         }
 
@@ -162,15 +148,13 @@ class UserTest {
         @DisplayName("Should throw exception when email does not contain @")
         void shouldThrowExceptionWhenEmailDoesNotContainAt() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password("password123")
-                        .email("alice.mail.com")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password("password123")
+                    .email("alice.mail.com")
+                    .build());
 
         }
 
@@ -178,15 +162,13 @@ class UserTest {
         @DisplayName("Should throw exception when email is empty")
         void shouldThrowExceptionWhenEmailIsEmpty() {
 
-            assertThrows(IllegalArgumentException.class, () -> {
+            assertThrows(IllegalArgumentException.class, () ->
 
-                new User.Builder()
-                        .name("Alice")
-                        .password("password123")
-                        .email("")
-                        .build();
-
-            });
+                    new User.Builder()
+                    .name("Alice")
+                    .password("password123")
+                    .email("")
+                    .build());
 
         }
 
@@ -398,7 +380,7 @@ class UserTest {
                     .email("alice@mail.com")
                     .build();
 
-            assertTrue(user1.equals(user2));
+            assertEquals(user1, user2);
 
         }
 
