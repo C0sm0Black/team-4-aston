@@ -1,11 +1,13 @@
-package org.example;
+package org.example.data;
 
 import org.example.collection.CustomLinkedList;
 import org.example.entity.User;
+import org.example.validator.UserValidator;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -152,16 +154,24 @@ public class DataInputHandler {
                         String password = parts[1].trim();
                         String email = parts[2].trim();
 
-                        // Валидируем данные из файла
-                        UserValidator.validateAll(name, password, email);
+                        try {
+                            // Валидируем данные из файла
+                            UserValidator.validateAll(name, password, email);
 
-                        return new User.Builder()
-                                .name(name)
-                                .password(password)
-                                .email(email)
-                                .build();
+                            return new User.Builder()
+                                    .name(name)
+                                    .password(password)
+                                    .email(email)
+                                    .build();
+
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("⚠️ Пропущена строка (невалидные данные): " +
+                                    name + ";" + password + ";" + email + " - " + e.getMessage());
+                            return null;
+                        }
 
                     })
+                    .filter(Objects::nonNull)
                     .collect(CustomLinkedList.toCustomLinkedList());
 
         }

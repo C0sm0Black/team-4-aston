@@ -25,6 +25,7 @@ public class Menu {
 
     public void showSortStrategyMenu(){
 
+        System.out.println("\nВыберите тип сортировки:");
         System.out.println("1. Обычная сортировка (по 3 полям)");
         System.out.println("2. Сортировка четных/нечетных значений");
         System.out.println("Выберите тип: ");

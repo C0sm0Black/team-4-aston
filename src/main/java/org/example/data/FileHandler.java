@@ -1,4 +1,4 @@
-package org.example;
+package org.example.data;
 
 import org.example.collection.CustomLinkedList;
 import org.example.entity.User;
@@ -17,7 +17,7 @@ public class FileHandler {
      * Если файл или директория не существуют, они будут созданы автоматически.
      *
      * @param users    Коллекция пользователей для сохранения
-     * @param filename Путь к файлу (например")
+     * @param filename Путь к файлу (например "user.txt")
      * @throws IOException Произошла ошибка при записи на диск
      */
     public static void saveToFile(CustomLinkedList<User> users, String filename) throws IOException {
@@ -29,7 +29,7 @@ public class FileHandler {
         }
 
         List<String> linesToWrite = users.stream()
-                .map(user -> String.join(",", user.getName(), user.getPassword(), user.getEmail()))
+                .map(user -> String.join(";", user.getName(), user.getPassword(), user.getEmail()))
                 .collect(Collectors.toList());
 
         Files.write(
