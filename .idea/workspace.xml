@@ -5,9 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8170a23c-0bb0-419c-891a-eb57e284ccc5" name="Changes" comment="Объединил ветки для теста приложения, все в ветку core-model, тесты убрал пока что.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/MenuOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ApplicationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/collection/CustomLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/comporator/UserComparatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/data/DataInputHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/data/FileHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/entity/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/menu/MenuFileHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/menu/UserTablePrinterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/BubbleSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/EvenOddBubbleSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/EvenOddInsertionSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/EvenOddQuickSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/InsertionSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/QuickSortStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/sort/factory/EvenOddSortFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/validator/UserValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DataInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/DataInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/validator/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/collection/CustomLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/collection/CustomLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/SortField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/menu/MenuFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sort/EvenOddSortStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sort/SortContext.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Developer3Tests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ApplicationIntegrationTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/SortStrategiesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +48,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -40,7 +72,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -55,7 +87,43 @@
   "keyToString": {
     "Application.Application.executor": "Run",
     "Application.SortStrategiesTest.executor": "Run",
+    "JUnit.All in team-4-aston.executor": "Run",
     "JUnit.ApplicationIntegrationTest.executor": "Run",
+    "JUnit.ApplicationTest$MenuDisplayTests.executor": "Run",
+    "JUnit.ApplicationTest$MenuDisplayTests.shouldDisplayMainMenuWithAllOptions.executor": "Run",
+    "JUnit.ApplicationTest$MenuDisplayTests.shouldDisplayMainMenuWithOptions.executor": "Run",
+    "JUnit.ApplicationTest$MenuDisplayTests.shouldDisplayMenuWithOptions.executor": "Run",
+    "JUnit.ApplicationTest$MenuDisplayTests.shouldDisplaySortStrategyMenuWhenDataLoaded.executor": "Run",
+    "JUnit.ApplicationTest$NumericFieldTests.executor": "Run",
+    "JUnit.ApplicationTest$SortAlgorithmTests.shouldReturnCorrectDisplayNames.executor": "Run",
+    "JUnit.ApplicationTest$SortAlgorithmTests.shouldReturnCorrectSortAlgorithmFromCode.executor": "Run",
+    "JUnit.ApplicationTest$SortAlgorithmTests.shouldThrowExceptionWhenSortAlgorithmFromInvalidCode.executor": "Run",
+    "JUnit.ApplicationTest$UserInputHandlingTests.shouldHandleInvalidInputAndRetry.executor": "Run",
+    "JUnit.ApplicationTest$UserInputHandlingTests.shouldHandleMenuChoiceWithoutDataLoaded.executor": "Run",
+    "JUnit.ApplicationTest.executor": "Run",
+    "JUnit.BubbleSortStrategyTest.executor": "Run",
+    "JUnit.CustomLinkedListTest$EdgeCasesTests.shouldHandleNullElements.executor": "Run",
+    "JUnit.CustomLinkedListTest.executor": "Run",
+    "JUnit.DataInputHandlerTest$ManualInputTests.executor": "Run",
+    "JUnit.DataInputHandlerTest$ReadUsersFromFileTests.shouldSkipInvalidDataLines.executor": "Run",
+    "JUnit.DataInputHandlerTest.executor": "Run",
+    "JUnit.EvenOddBubbleSortStrategyTest.executor": "Run",
+    "JUnit.EvenOddInsertionSortStrategyTest.executor": "Run",
+    "JUnit.EvenOddQuickSortStrategyTest.executor": "Run",
+    "JUnit.EvenOddSortFactoryTest.executor": "Run",
+    "JUnit.FileHandlerTest$EdgeCasesTests.shouldAppendMultipleTimes.executor": "Run",
+    "JUnit.FileHandlerTest$ExceptionHandlingTests.executor": "Run",
+    "JUnit.FileHandlerTest$ExceptionHandlingTests.shouldThrowExceptionWhenFilenameInvalid.executor": "Run",
+    "JUnit.FileHandlerTest$SaveToFileTests.shouldPreserveOrderOfUsers.executor": "Run",
+    "JUnit.FileHandlerTest.executor": "Run",
+    "JUnit.InsertionSortStrategyTest.executor": "Run",
+    "JUnit.MenuFileHandlerTest.executor": "Run",
+    "JUnit.QuickSortStrategyTest.executor": "Run",
+    "JUnit.UserComparatorTest.executor": "Run",
+    "JUnit.UserTablePrinterTest.executor": "Run",
+    "JUnit.UserTablePrinterTest.shouldPrintUsersTableWithCorrectFormat.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "JUnit.UserValidatorTest.executor": "Run",
     "Maven.team-4-aston [clean].executor": "Run",
     "Maven.team-4-aston [install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -64,9 +132,12 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "core-model",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/soulk/IdeaProjects/team-4-aston",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/soulk/IdeaProjects/team-4-aston/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Project",
@@ -77,14 +148,34 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\soulk\IdeaProjects\team-4-aston" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\soulk\IdeaProjects\team-4-aston\src\main" />
       <recent name="C:\Users\soulk\IdeaProjects\team-4-aston\src\main\java\org.example" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+      <recent name="org.example.validator" />
+      <recent name="org.example.sort.factory" />
+      <recent name="org.example.sort" />
+      <recent name="org.example.menu" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Application" />
+  <component name="RunManager" selected="JUnit.All in team-4-aston">
+    <configuration name="All in team-4-aston" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="team-4-aston" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTest$NumericFieldTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="team-4-aston" />
       <extension name="coverage">
         <pattern>
@@ -92,12 +183,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.example.ApplicationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationTest$NumericFieldTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortStrategiesTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.SortStrategiesTest" />
+    <configuration name="ApplicationTest$SortAlgorithmTests.shouldReturnCorrectDisplayNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="team-4-aston" />
       <extension name="coverage">
         <pattern>
@@ -105,20 +198,40 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.example.ApplicationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationTest$SortAlgorithmTests" />
+      <option name="METHOD_NAME" value="shouldReturnCorrectDisplayNames" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationTest$SortAlgorithmTests.shouldThrowExceptionWhenSortAlgorithmFromInvalidCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="team-4-aston" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.sort.*" />
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.ApplicationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationTest$SortAlgorithmTests" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenSortAlgorithmFromInvalidCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="team-4-aston" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,9 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
-        <item itemvalue="Application.SortStrategiesTest" />
-        <item itemvalue="JUnit.ApplicationIntegrationTest" />
+        <item itemvalue="JUnit.All in team-4-aston" />
+        <item itemvalue="JUnit.ApplicationTest" />
+        <item itemvalue="JUnit.ApplicationTest$NumericFieldTests" />
+        <item itemvalue="JUnit.ApplicationTest$SortAlgorithmTests.shouldReturnCorrectDisplayNames" />
+        <item itemvalue="JUnit.ApplicationTest$SortAlgorithmTests.shouldThrowExceptionWhenSortAlgorithmFromInvalidCode" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +274,7 @@
       <workItem from="1786969537137" duration="607000" />
       <workItem from="1786970635245" duration="421000" />
       <workItem from="1786971217552" duration="9075000" />
+      <workItem from="1787049888757" duration="8810000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />

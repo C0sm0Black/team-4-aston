@@ -214,10 +214,24 @@ public class CustomLinkedList<T> implements Iterable<T> {
 
         while (current != null) {
 
-            if (current.data.equals(element)) {
+            // Безопасная проверка на null
+            if (element == null) {
 
-                removeNode(current);
-                return true;
+                if (current.data == null) {
+
+                    removeNode(current);
+                    return true;
+
+                }
+
+            } else {
+
+                if (element.equals(current.data)) {
+
+                    removeNode(current);
+                    return true;
+
+                }
 
             }
 
@@ -296,8 +310,18 @@ public class CustomLinkedList<T> implements Iterable<T> {
 
         while (current != null) {
 
-            if (current.data.equals(element)) {
-                return index;
+            if (element == null) {
+
+                if (current.data == null) {
+                    return index;
+                }
+
+            } else {
+
+                if (element.equals(current.data)) {
+                    return index;
+                }
+
             }
 
             current = current.next;

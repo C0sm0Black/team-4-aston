@@ -2,7 +2,9 @@ package org.example;
 
 import org.example.collection.CustomLinkedList;
 import org.example.comporator.UserComparator;
+import org.example.data.DataInputHandler;
 import org.example.entity.User;
+import org.example.enums.MenuOption;
 import org.example.enums.NumericField;
 import org.example.enums.SortAlgorithm;
 import org.example.menu.Menu;
@@ -17,19 +19,6 @@ import org.example.sort.factory.EvenOddSortFactory;
 import java.util.Scanner;
 
 public class Application {
-
-    // Константы для меню
-    private static final int MANUAL_INPUT = 1;
-    private static final int RANDOM_INPUT = 2;
-    private static final int FILE_INPUT = 3;
-    private static final int ADD_USERS = 4;
-    private static final int SELECT_STRATEGY = 5;
-    private static final int EXECUTE_SORT = 6;
-    private static final int SHOW_USERS = 7;
-    private static final int SAVE_TO_FILE = 8;
-    private static final int COUNT_OCCURRENCES = 9;
-    private static final int EXIT = 0;
-
 
     // Состояние приложения
     private CustomLinkedList<User> users;
@@ -99,11 +88,11 @@ public class Application {
                 String input = scanner.nextLine().trim();
                 int choice = Integer.parseInt(input);
 
-                if (choice >= 0 && choice <= 9) {
+                if (MenuOption.isValidCode(choice)) {
                     return choice;
                 }
 
-                System.out.print("❌ Введите число от " + EXIT + " до 9: ");
+                System.out.print("❌ Введите число от " + MenuOption.EXIT.getCode() + " до 9: ");
 
             } catch (NumberFormatException e) {
                 System.out.print("❌ Ошибка: введите число: ");
@@ -118,7 +107,9 @@ public class Application {
      */
     private void handleMenuChoice(int choice) {
 
-        switch (choice) {
+        MenuOption option = MenuOption.fromCode(choice);
+
+        switch (option) {
 
             case MANUAL_INPUT -> handleManualInput();
             case RANDOM_INPUT -> handleRandomInput();
@@ -313,11 +304,7 @@ public class Application {
 
         }
 
-        System.out.println("\nВыберите тип сортировки:");
-        System.out.println("1. Обычная сортировка (по 3 полям)");
-        System.out.println("2. Сортировка четных/нечетных значений");
-        System.out.print("Выберите тип: ");
-
+        menu.showSortStrategyMenu();
         int sortType;
 
         try {
